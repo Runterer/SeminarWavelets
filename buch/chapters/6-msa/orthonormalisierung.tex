@@ -5,9 +5,16 @@
 %
 \section{Orthonormalisierung
 \label{section:orthonormalisierung}}
-\rhead{Orthonormalisierung}
+%\rhead{Orthonormalisierung}
+\begin{figure}
+\centering
+\includegraphics{chapters/6-msa/images/b2skal.pdf}
+\caption{Skalierungsrelation für die Funktion $\varphi_{B^2}$
+definiert durch \eqref{msa:ortho:beispiel}.
+\label{msa:ortho:beispielfig}}
+\end{figure}
 Die Funktion
-\[
+\begin{equation}
 \varphi_{B^2}(t)
 =
 \begin{cases}
@@ -15,7 +22,8 @@ Die Funktion
 2-t&\qquad 1\le t \le 2\\
   0&\qquad \text{sonst}
 \end{cases}
-\]
+\label{msa:ortho:beispiel}
+\end{equation}
 erfüllt die Skalierungsgleichung
 \begin{equation}
 \varphi_{B^2}(t)
@@ -24,9 +32,10 @@ erfüllt die Skalierungsgleichung
 +
 \varphi_{B^2}(2t-1)
 +
-\frac12\varphi_{B^2}(2t-2).
+\frac12\varphi_{B^2}(2t-2)
 \label{eq:skalierung-phi1-proto}
 \end{equation}
+(siehe Abbildung~\ref{msa:ortho:beispielfig}).
 Wir werden in Kapitel~\ref{chapter:spline} zeigen, dass sich daraus ein
 geeignetes Mutterwavelet konstruieren lässt.
 Eine grundlegende Schwierigkeit, die dabei gelöst werden muss, ist, dass
@@ -45,9 +54,12 @@ Vielmehr ist das Skalarprodukt
 \frac12-\frac13 = \frac16\ne 0
 \end{align*}
 
+% moved here
+\rhead{Orthonormalisierung}
+
 % XXX TODO bild zu \varphi_{B^2} und der Berechnung des Skalarproduktes
 
-In diesem Abschnitt soll daher die folgende Aufgabe gelöst werden
+In diesem Abschnitt soll daher die folgende Aufgabe gelöst werden.
 \begin{aufgabe}
 \label{aufgabe:orthonormalisierung}
 Gegeben $f\in L^2(\mathbb R)$ konstruiere eine Funktion 
@@ -59,7 +71,7 @@ F(t) = \sum_{k=-\infty}^\infty c_k f(t-k)
 und so, dass die Translate von $F$ orthonormiert sind.
 \end{aufgabe}
 
-In der Linearen Algebra lernt man üblicherweise das Verfahren von
+In der linearen Algebra lernt man üblicherweise das Verfahren von
 Gram-Schmidt zur Orthonormalisierung einer Basis eines Vektorraumes.
 Es beginnt beim ersten Vektor der nur in seiner Länge verändert wird.
 Die folgenden Vektoren werden dann sukzessive modifiziert, so dass sie
@@ -86,7 +98,7 @@ Die Funktion
 ist $2\pi$-periodisch, also auch die Funktion $1/\sqrt{\Phi(\omega)}$.
 Sie kann daher in eine Fourier-Reihe entwickelt werden
 \[
-\frac{1}{\sqrt{\Phi(\omega}}
+\frac{1}{\sqrt{\Phi(\omega)}}
 =
 \sum_{k\in\mathbb Z} c_ke^{-ik\omega}
 \]
@@ -112,11 +124,13 @@ Wir können aber auch die Orthogonalitätsbedingung verifizieren:
 Die Translate der Funktion $F$ sind daher orthonormiert.
 \end{proof}
 
-Diese Lösung zeigt, dass unter der Voraussetzung, dass die Funktion
-$\Phi(\omega)=\mathcal{P}|\hat{f}(\omega)|^2$ so ist, dass auch
+Wenn also
+$\Phi(\omega)=\mathcal{P}|\hat{f}(\omega)|^2$ dergestalt ist, dass 
 $1/\sqrt{\Phi(\omega}$ eine quadratinterierbare periodische Funktion ist,
 dann lassen sich die Translate von $f$ so linear zu $F$ kombinieren, dass die
 die Translate von $F$ orthonormiert sind.
+Die Aufgabe lässt sich also insbesondere dann läsen, wenn $\Phi(\omega)$
+keine Nullstellen hat.
 Dieser Prozess ersetzt also das Gram-Schmidtsche Orthogonalisierungsverfahren
 im Falle der Wavelets.
 

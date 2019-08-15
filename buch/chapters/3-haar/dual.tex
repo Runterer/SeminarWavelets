@@ -5,7 +5,7 @@
 %
 \section{Dualzahlen-Unterteilung%
 \label{section:dualzahlen}}
-\rhead{Dualzahlen}
+%\rhead{Dualzahlen}
 Wir beginnen mit der Unterteilung
 \[
 U_0
@@ -16,11 +16,22 @@ U_0
 \]
 der reellen Achse durch ganze Zahlen.
 Man könnte auch sagen, als Masseinheit auf der $x$-Achse wird die
-Länge des Abtastintervals verwendet.
+Länge des Abtastintervalls verwendet.
 Abtastung erfolgt also nur an ganzzahligen $x$-Werten und
 Translationen um ganze Zahlen sind uneingeschränkt möglich.
 
-Um mehr Detail zu erhalten, kann das Abtastinterval halbiert werden.
+% moved here
+\rhead{Dualzahlen}
+\begin{figure}
+\centering
+\includegraphics{chapters/3-haar/images/dual.pdf}
+\caption{Dualzahlen-Unterteilung $\mathbb D$ von $\mathbb R$ durch
+rationalen Zahlen mit Nennern, die Zweierpotenzen sind. 
+Abtastung auf den Dualzahlen ermöglicht beliebige Translationen um
+Vielfache einer Zweierpotenz und Skalierungen um Zweierpotenzen.
+\label{haar:figure:dualzahlen}}
+\end{figure}
+Um mehr Detail zu erhalten, kann das Abtastintervall halbiert werden.
 Die Unterteilung bekommt dann die Form
 \[
 U_1
@@ -40,7 +51,7 @@ feine Unterteilung
 \[
 U_j = \{ k2^{-j}\,|\,k\in\mathbb Z\}
 \]
-entstehen.
+entstehen (Siehe auch Abbildung~\ref{haar:figure:dualzahlen}).
 In jedem Schritt wird die Menge an Informationen der gesampelten Funktion
 verdoppelt, ohne dass früher gefundene Samples nutzlos werden.
 In $U_j$ sind Verschiebungen um ganzzahlige Vielfache von $2^{-j}$ 
@@ -64,6 +75,7 @@ rx&=r(k_x2^{-j}) = (rk_x)2^{-j}\in U_j.
 \end{align*}
 Man sagt, $U_j$ ist ein {\em Modul} über den ganzen Zahlen oder ein
 {\em $\mathbb Z$-Modul}.
+\index{Modul}
 Die Additionseigenschaft ist insofern von Bedeutung, als eine analoge
 Eigenschaft für die Konstruktion der Fouriertheorie von entscheidender
 Bedeutung war.
@@ -85,7 +97,7 @@ Wegen
 =
 \delta_{lr},
 \]
-Jeder einzelne der Vektorräume $V_j$ hat also eine einfach anzgebende
+Jeder einzelne der Vektorräume $V_j$ hat also eine einfach anzugebende
 Basis.
 
 Die Vereinigung aller $U_j$ 
@@ -100,7 +112,10 @@ Die Vereinigung aller $U_j$
 \]
 ist die Menge aller Brüche mit Zweierpotenz-Nennern.
 Sie heisst die Menge der {\em Dualzahlen}.
-$\mathbb D$ noch eine weitere Struktur. % TODO: Check
+
+
+Ausser der Addition hat 
+$\mathbb D$ noch weitere Struktur.
 Sind $x = k_x2^{-j_x}\in U_{j_x}$ und $y=k_y2^{-j_y}\in U_{j_y}$, dann
 ist das Produkt
 \[
@@ -109,7 +124,8 @@ xy = k_x2^{-j_x} k_y2^{-j_y}=(k_xk_y)2^{-(j_x+j_y)}\in U_{j_x+j_y}
 und damit $xy\in\mathbb D$.
 In den Dualzahlen ist daher auch die Multiplikation möglich, so wie
 dies in der Mengen $\mathbb Z$ der ganzen Zahlen möglich ist.
-Man sagt, $\mathbb D$ ist ein Ring.
+Man sagt, $\mathbb D$ ist ein {\em Ring}.
+\index{Ring}%
 Während in jeder Menge $U_j$ nur die Multiplikation mit ganzen Zahlen
 möglich war, ist in $\mathbb D$ auch die Division durch Zweierpotenzen
 möglich.
@@ -135,8 +151,8 @@ Zum einen sind die Funktionen $e^{(k)}$ der verschiedenen Vektorräume
 nicht orthogonal.
 Andererseits lösen sie das bereits angesprochen Problem der Redundanz
 der Information nicht.
-Das Skalarprodukt eines Signals mit $e^{(l)}$ ist im Wesentlichen der
-Abstastwert in der Nähe von $l2^{-j}$.
+Das Skalarprodukt eines Signals mit der stückweise konstanten Funktion
+$e^{(l)}$ ist im Wesentlichen der Abstastwert in der Nähe von $l2^{-j}$.
 Für langsam veränderliche Signale sind nahe beeinander liegende 
 Abtastwerte nahe beeinander.
 Mit den Vektorräumen $V_j$ ist es also möglich, ein Signal beliebig
@@ -213,7 +229,7 @@ effizienten Charakterisierung des Signals.
 %Funktionen von Intervallen aufeinanderfolgenden Endpunkten in $U_{j+1}$
 %aufgebaut.
 %Alle diese charakteristischen Funktionen sind verschobene und geeignet
-%gestreckte Versionen der charakteristischen Funktion des Grundintervals
+%gestreckte Versionen der charakteristischen Funktion des Grundintervalls
 %$[0,1)$.
 %Setzen wir
 %\[
@@ -237,7 +253,7 @@ effizienten Charakterisierung des Signals.
 %Das Vater-Wavelet $\varphi$ erfüllt eine ähnliche Relation
 %wie \eqref{haar:psiphi}.
 %Bei der Konstruktion haben wir diese Relation sogar in entscheidender
-%Weise gebraucht, indem wir das Interval in zwei Halbintervalle aufgeteilt
+%Weise gebraucht, indem wir das Intervall in zwei Halbintervalle aufgeteilt
 %haben.
 %Diese Aufteilung bedeutet
 %\[
